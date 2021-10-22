@@ -27,7 +27,7 @@ import { element } from "svelte/internal";
 
 		//Plotly.deleteTraces('myDiv', 0);
 		values = values.map(element => {
-			return Math.ceil(Math.random() * 70 + 30);
+			return Math.ceil(Math.random() * 8 );
 		}); 
 		
 		let data = [
@@ -44,7 +44,7 @@ import { element } from "svelte/internal";
       		polar: {
 				radialaxis: {
     	  		    visible: true,
-    	  		    range: [0, 100]
+    	  		    range: [0, 8]
     	        }
     		}
     	}
@@ -58,10 +58,10 @@ import { element } from "svelte/internal";
 
 		//Plotly.deleteTraces('myDiv', 0);
 		let values1 = values.map(element => {
-			return Math.ceil(Math.random() * 50 + 50);
+			return Math.ceil(Math.random() * 8);
 		}); 
 
-		let values2 = values.map(() => Math.ceil(Math.random() * 70 + 30));		
+		let values2 = values.map(() => Math.ceil(Math.random() * 6));		
 		let data = [
       			{
         			type: 'scatterpolar',
@@ -83,7 +83,7 @@ import { element } from "svelte/internal";
       		polar: {
 				radialaxis: {
     	  		    visible: true,
-    	  		    range: [0, 100]
+    	  		    range: [0, 8]
     	        }
     		}
     	}
@@ -126,7 +126,7 @@ import { element } from "svelte/internal";
       polar: {
         radialaxis: {
           visible: true,
-          range: [0, 100]
+          range: [0, 8]
         }
       }
     }
