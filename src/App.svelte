@@ -4,7 +4,7 @@ import { element } from "svelte/internal";
 
 
 	export let name;
-	let firstDraw = false;
+	let seeDinamics = false;
 
 	onMount(() => {
         console.log("the component has mounted");
@@ -12,6 +12,11 @@ import { element } from "svelte/internal";
     });
 
     // http://192.168.1.13:8001/?A1=66&A2=75&A3=18&A4=54&B1=54&B2=23&B3=68&B4=35&C1=62&C2=19&C3=79&C4=98&D1=30&D2=52&D3=86&D4=34&
+	
+	function toggleDinamics() {
+		seeDinamics = !seeDinamics;
+	}
+
 	function drawGraph() {
 
         Plotly.newPlot("myDiv", data, layout)
@@ -22,7 +27,7 @@ import { element } from "svelte/internal";
 
 		//Plotly.deleteTraces('myDiv', 0);
 		values = values.map(element => {
-			return Math.ceil(Math.random() * 50 + 50);
+			return Math.ceil(Math.random() * 70 + 30);
 		}); 
 		
 		let data = [
@@ -132,15 +137,26 @@ import { element } from "svelte/internal";
 
 <main>
 	<h3 class="mb-5">Your data results</h3>
-	<div>
-		<button class="btn btn-primary" on:click="{drawGraph}">Redraw graph from query</button>
-		
-		
-	</div>
+	
 	<div id="myDiv"></div>
-	<button class="btn btn-danger mr-2" on:click="{drawRandGraph}">Draw a random graph</button>
-	<button class="btn btn-warning ml-2" on:click="{drawTwoGraphs}">Draw two random graphs</button>
 
+	{#if seeDinamics}
+		<div>
+			<button class="btn btn-danger mb-3" on:click="{drawRandGraph}">Draw a random graph</button>
+		</div>
+		<div>
+			<button class="btn btn-warning mb-3" on:click="{drawTwoGraphs}">Draw two random graphs</button>
+		</div>
+		<div>
+			<button class="btn btn-primary mb-3" on:click="{drawGraph}">Redraw graph from query</button>
+		</div>
+	{/if}
+
+	<div>
+		<button class="btn btn-secondary mt-5" on:click="{toggleDinamics}">
+			Try random values
+		</button>
+	</div>
 </main>
 
 <style>
