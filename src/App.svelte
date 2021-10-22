@@ -20,7 +20,7 @@ import { element } from "svelte/internal";
 	function drawGraph() {
 
         Plotly.newPlot("myDiv", data, layout)
-		firstDraw = true;
+		
 	}
 
 	function drawRandGraph() {
