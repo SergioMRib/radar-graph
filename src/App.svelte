@@ -1,6 +1,8 @@
 <script>
 import {onMount} from "svelte";
 import { element } from "svelte/internal";
+import Chart from 'chart.js/auto';
+
 
 
 	export let name;
@@ -100,6 +102,7 @@ import { element } from "svelte/internal";
     const currUrl = window.location.search
     const urlParams = new URLSearchParams(currUrl);
     let entries = urlParams.entries();
+	
 
     for(let [key, value] of entries) {
         console.log(key + " => " + value)
