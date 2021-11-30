@@ -13328,13 +13328,13 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
-    	child_ctx[17] = list;
-    	child_ctx[18] = i;
+    	child_ctx[21] = list[i];
+    	child_ctx[22] = list;
+    	child_ctx[23] = i;
     	return child_ctx;
     }
 
-    // (140:40) {#each graphData as record}
+    // (177:40) {#each graphData as record}
     function create_each_block(ctx) {
     	let div;
     	let input0;
@@ -13347,11 +13347,11 @@ var app = (function () {
     	let dispose;
 
     	function input0_input_handler_1() {
-    		/*input0_input_handler_1*/ ctx[9].call(input0, /*each_value*/ ctx[17], /*record_index*/ ctx[18]);
+    		/*input0_input_handler_1*/ ctx[11].call(input0, /*each_value*/ ctx[22], /*record_index*/ ctx[23]);
     	}
 
     	function input1_input_handler() {
-    		/*input1_input_handler*/ ctx[10].call(input1, /*each_value*/ ctx[17], /*record_index*/ ctx[18]);
+    		/*input1_input_handler*/ ctx[12].call(input1, /*each_value*/ ctx[22], /*record_index*/ ctx[23]);
     	}
 
     	const block = {
@@ -13367,27 +13367,27 @@ var app = (function () {
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "placeholder", "empty");
-    			attr_dev(input0, "aria-label", "Username");
-    			add_location(input0, file, 141, 48, 5949);
+    			attr_dev(input0, "aria-label", "key");
+    			add_location(input0, file, 178, 48, 7188);
     			attr_dev(span, "class", "input-group-text");
-    			add_location(span, file, 142, 48, 6153);
-    			attr_dev(input1, "type", "text");
+    			add_location(span, file, 179, 48, 7387);
+    			attr_dev(input1, "type", "number");
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "placeholder", "Server");
-    			attr_dev(input1, "aria-label", "Server");
-    			add_location(input1, file, 143, 48, 6241);
+    			attr_dev(input1, "aria-label", "value");
+    			add_location(input1, file, 180, 48, 7475);
     			attr_dev(div, "class", "input-group mb-3");
-    			add_location(div, file, 140, 44, 5870);
+    			add_location(div, file, 177, 44, 7109);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, input0);
-    			set_input_value(input0, /*record*/ ctx[16].key);
+    			set_input_value(input0, /*record*/ ctx[21].key);
     			append_dev(div, t0);
     			append_dev(div, span);
     			append_dev(div, t2);
     			append_dev(div, input1);
-    			set_input_value(input1, /*record*/ ctx[16].value);
+    			set_input_value(input1, /*record*/ ctx[21].value);
     			append_dev(div, t3);
 
     			if (!mounted) {
@@ -13422,12 +13422,12 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*graphData*/ 1 && input0.value !== /*record*/ ctx[16].key) {
-    				set_input_value(input0, /*record*/ ctx[16].key);
+    			if (dirty & /*graphData*/ 1 && input0.value !== /*record*/ ctx[21].key) {
+    				set_input_value(input0, /*record*/ ctx[21].key);
     			}
 
-    			if (dirty & /*graphData*/ 1 && input1.value !== /*record*/ ctx[16].value) {
-    				set_input_value(input1, /*record*/ ctx[16].value);
+    			if (dirty & /*graphData*/ 1 && to_number(input1.value) !== /*record*/ ctx[21].value) {
+    				set_input_value(input1, /*record*/ ctx[21].value);
     			}
     		},
     		d: function destroy(detaching) {
@@ -13441,7 +13441,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(140:40) {#each graphData as record}",
+    		source: "(177:40) {#each graphData as record}",
     		ctx
     	});
 
@@ -13453,48 +13453,58 @@ var app = (function () {
     	let h3;
     	let t1;
     	let div13;
-    	let div11;
+    	let div12;
     	let div0;
-    	let canvas;
+    	let canvas_1;
     	let t2;
+    	let div11;
     	let div10;
+    	let button0;
+    	let t4;
     	let div9;
-    	let div8;
     	let div4;
     	let h20;
-    	let button0;
-    	let t3;
-    	let button0_class_value;
-    	let t4;
+    	let button1;
+    	let t5;
+    	let button1_class_value;
+    	let t6;
     	let div3;
     	let div2;
     	let div1;
-    	let span;
-    	let t6;
-    	let input0;
-    	let t7;
-    	let label;
+    	let span0;
     	let t8;
+    	let input0;
     	let t9;
+    	let label0;
     	let t10;
     	let t11;
+    	let t12;
+    	let t13;
     	let p;
     	let input1;
     	let div3_class_value;
-    	let t12;
-    	let div7;
-    	let h21;
-    	let button1;
-    	let t13;
-    	let button1_class_value;
     	let t14;
-    	let div6;
-    	let div5;
-    	let ul;
-    	let div6_class_value;
-    	let t15;
-    	let div12;
+    	let div8;
+    	let h21;
     	let button2;
+    	let t15;
+    	let button2_class_value;
+    	let t16;
+    	let div7;
+    	let div6;
+    	let ul;
+    	let t17;
+    	let div5;
+    	let label1;
+    	let t19;
+    	let input2;
+    	let t20;
+    	let span1;
+    	let t22;
+    	let input3;
+    	let t23;
+    	let button3;
+    	let div7_class_value;
     	let mounted;
     	let dispose;
     	let each_value = /*graphData*/ ctx[0];
@@ -13512,137 +13522,168 @@ var app = (function () {
     			h3.textContent = "Your data results";
     			t1 = space();
     			div13 = element("div");
-    			div11 = element("div");
+    			div12 = element("div");
     			div0 = element("div");
-    			canvas = element("canvas");
+    			canvas_1 = element("canvas");
     			t2 = space();
+    			div11 = element("div");
     			div10 = element("div");
+    			button0 = element("button");
+    			button0.textContent = "Print graph";
+    			t4 = space();
     			div9 = element("div");
-    			div8 = element("div");
     			div4 = element("div");
     			h20 = element("h2");
-    			button0 = element("button");
-    			t3 = text("Chart info");
-    			t4 = space();
+    			button1 = element("button");
+    			t5 = text("Chart info");
+    			t6 = space();
     			div3 = element("div");
     			div2 = element("div");
     			div1 = element("div");
-    			span = element("span");
-    			span.textContent = "Title";
-    			t6 = space();
+    			span0 = element("span");
+    			span0.textContent = "Title";
+    			t8 = space();
     			input0 = element("input");
-    			t7 = space();
-    			label = element("label");
-    			t8 = text("Current size: ");
-    			t9 = text(/*maxWidth*/ ctx[2]);
-    			t10 = text("px");
-    			t11 = space();
+    			t9 = space();
+    			label0 = element("label");
+    			t10 = text("Current size: ");
+    			t11 = text(/*maxWidth*/ ctx[3]);
+    			t12 = text("px");
+    			t13 = space();
     			p = element("p");
     			input1 = element("input");
-    			t12 = space();
-    			div7 = element("div");
-    			h21 = element("h2");
-    			button1 = element("button");
-    			t13 = text("Chart data");
     			t14 = space();
+    			div8 = element("div");
+    			h21 = element("h2");
+    			button2 = element("button");
+    			t15 = text("Chart data");
+    			t16 = space();
+    			div7 = element("div");
     			div6 = element("div");
-    			div5 = element("div");
     			ul = element("ul");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t15 = space();
-    			div12 = element("div");
-    			button2 = element("button");
-    			button2.textContent = "Try random values";
-    			attr_dev(h3, "class", "mb-5 text-center svelte-n69emr");
-    			add_location(h3, file, 100, 1, 2722);
-    			attr_dev(canvas, "id", "myChart");
-    			set_style(canvas, "width", "100%");
-    			set_style(canvas, "width", /*maxWidth*/ ctx[2] + 'px');
-    			set_style(canvas, "height", /*maxWidth*/ ctx[2] + 'px');
-    			attr_dev(canvas, "class", "svelte-n69emr");
-    			add_location(canvas, file, 105, 16, 2917);
+    			t17 = space();
+    			div5 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Add new records";
+    			t19 = space();
+    			input2 = element("input");
+    			t20 = space();
+    			span1 = element("span");
+    			span1.textContent = ":";
+    			t22 = space();
+    			input3 = element("input");
+    			t23 = space();
+    			button3 = element("button");
+    			button3.textContent = "Add";
+    			attr_dev(h3, "class", "mb-5 text-center svelte-1f1yzvn");
+    			add_location(h3, file, 131, 1, 3708);
+    			attr_dev(canvas_1, "id", "myChart");
+    			set_style(canvas_1, "width", "100%");
+    			set_style(canvas_1, "width", /*maxWidth*/ ctx[3] + 'px');
+    			set_style(canvas_1, "height", /*maxWidth*/ ctx[3] + 'px');
+    			attr_dev(canvas_1, "class", "svelte-1f1yzvn");
+    			add_location(canvas_1, file, 136, 16, 3903);
     			attr_dev(div0, "id", "myDiv");
-    			attr_dev(div0, "class", "col-7 border border-dark my-1 p-3 svelte-n69emr");
-    			add_location(div0, file, 104, 12, 2842);
-    			attr_dev(button0, "class", button0_class_value = "accordion-button " + (/*editDetails*/ ctx[3].info ? '' : 'collapsed'));
-    			attr_dev(button0, "type", "button");
-    			attr_dev(button0, "data-bs-toggle", "collapse");
-    			attr_dev(button0, "data-bs-target", "#panelsStayOpen-collapseOne");
-    			attr_dev(button0, "aria-expanded", "true");
-    			attr_dev(button0, "aria-controls", "panelsStayOpen-collapseOne");
-    			add_location(button0, file, 113, 32, 3380);
+    			attr_dev(div0, "class", "col-7 border border-dark my-1 p-3 svelte-1f1yzvn");
+    			add_location(div0, file, 135, 12, 3828);
+    			attr_dev(button0, "id", "download");
+    			attr_dev(button0, "class", "btn btn-primary mb-3 ");
+    			add_location(button0, file, 141, 20, 4132);
+    			attr_dev(button1, "class", button1_class_value = "accordion-button " + (/*editDetails*/ ctx[4].info ? '' : 'collapsed'));
+    			attr_dev(button1, "type", "button");
+    			attr_dev(button1, "data-bs-toggle", "collapse");
+    			attr_dev(button1, "data-bs-target", "#panelsStayOpen-collapseOne");
+    			attr_dev(button1, "aria-expanded", "true");
+    			attr_dev(button1, "aria-controls", "panelsStayOpen-collapseOne");
+    			add_location(button1, file, 150, 32, 4608);
     			attr_dev(h20, "class", "accordion-header");
     			attr_dev(h20, "id", "panelsStayOpen-headingOne");
-    			add_location(h20, file, 112, 28, 3286);
-    			attr_dev(span, "class", "input-group-text");
-    			attr_dev(span, "id", "basic-addon1");
-    			add_location(span, file, 120, 40, 4124);
+    			add_location(h20, file, 149, 28, 4514);
+    			attr_dev(span0, "class", "input-group-text");
+    			attr_dev(span0, "id", "basic-addon1");
+    			add_location(span0, file, 157, 40, 5352);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "placeholder", "Title");
     			attr_dev(input0, "aria-label", "label");
     			attr_dev(input0, "aria-describedby", "label");
-    			add_location(input0, file, 121, 40, 4226);
+    			add_location(input0, file, 158, 40, 5454);
     			attr_dev(div1, "class", "input-group mb-3");
-    			add_location(div1, file, 119, 36, 4053);
-    			attr_dev(label, "for", "max-width");
-    			add_location(label, file, 123, 36, 4495);
+    			add_location(div1, file, 156, 36, 5281);
+    			attr_dev(label0, "for", "max-width");
+    			add_location(label0, file, 160, 36, 5723);
     			attr_dev(input1, "type", "range");
     			attr_dev(input1, "name", "max-width");
     			attr_dev(input1, "id", "max-width");
-    			attr_dev(input1, "min", "200");
-    			attr_dev(input1, "max", "900");
+    			attr_dev(input1, "min", "350");
+    			attr_dev(input1, "max", "800");
     			attr_dev(input1, "step", "50");
-    			add_location(input1, file, 125, 40, 4633);
-    			add_location(p, file, 124, 36, 4589);
+    			add_location(input1, file, 162, 40, 5861);
+    			add_location(p, file, 161, 36, 5817);
     			attr_dev(div2, "class", "accordion-body");
-    			add_location(div2, file, 118, 32, 3988);
+    			add_location(div2, file, 155, 32, 5216);
     			attr_dev(div3, "id", "panelsStayOpen-collapseOne");
-    			attr_dev(div3, "class", div3_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[3].info ? 'show' : ''));
+    			attr_dev(div3, "class", div3_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[4].info ? 'show' : ''));
     			attr_dev(div3, "aria-labelledby", "panelsStayOpen-headingOne");
-    			add_location(div3, file, 117, 28, 3806);
+    			add_location(div3, file, 154, 28, 5034);
     			attr_dev(div4, "class", "accordion-item");
-    			add_location(div4, file, 111, 24, 3229);
-    			attr_dev(button1, "class", button1_class_value = "accordion-button " + (/*editDetails*/ ctx[3].data ? '' : 'collapsed'));
-    			attr_dev(button1, "type", "button");
-    			attr_dev(button1, "data-bs-toggle", "collapse");
-    			attr_dev(button1, "data-bs-target", "#panelsStayOpen-collapseTwo");
-    			attr_dev(button1, "aria-expanded", "false");
-    			attr_dev(button1, "aria-controls", "panelsStayOpen-collapseTwo");
-    			add_location(button1, file, 132, 32, 5058);
+    			add_location(div4, file, 148, 24, 4457);
+    			attr_dev(button2, "class", button2_class_value = "accordion-button " + (/*editDetails*/ ctx[4].data ? '' : 'collapsed'));
+    			attr_dev(button2, "type", "button");
+    			attr_dev(button2, "data-bs-toggle", "collapse");
+    			attr_dev(button2, "data-bs-target", "#panelsStayOpen-collapseTwo");
+    			attr_dev(button2, "aria-expanded", "false");
+    			attr_dev(button2, "aria-controls", "panelsStayOpen-collapseTwo");
+    			add_location(button2, file, 169, 32, 6297);
     			attr_dev(h21, "class", "accordion-header");
     			attr_dev(h21, "id", "panelsStayOpen-headingTwo");
-    			add_location(h21, file, 131, 28, 4965);
+    			add_location(h21, file, 168, 28, 6204);
     			attr_dev(ul, "class", "list-group");
-    			add_location(ul, file, 138, 36, 5734);
-    			attr_dev(div5, "class", "accordion-body");
-    			add_location(div5, file, 137, 32, 5669);
-    			attr_dev(div6, "id", "panelsStayOpen-collapseTwo");
-    			attr_dev(div6, "class", div6_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[3].data ? 'show' : ''));
-    			attr_dev(div6, "aria-labelledby", "panelsStayOpen-headingTwo");
-    			add_location(div6, file, 136, 28, 5485);
-    			attr_dev(div7, "class", "accordion-item");
-    			add_location(div7, file, 130, 24, 4908);
-    			attr_dev(div8, "class", "accordion");
-    			attr_dev(div8, "id", "accordionPanelsStayOpenExample");
-    			add_location(div8, file, 110, 20, 3145);
-    			attr_dev(div9, "class", "border border-dark m-1 p-3");
-    			add_location(div9, file, 109, 16, 3084);
-    			attr_dev(div10, "class", "col-4");
-    			add_location(div10, file, 108, 12, 3048);
-    			attr_dev(div11, "class", "row");
-    			add_location(div11, file, 103, 8, 2812);
-    			attr_dev(button2, "class", "btn btn-secondary mt-5");
-    			add_location(button2, file, 160, 12, 6842);
-    			add_location(div12, file, 159, 8, 6824);
+    			add_location(ul, file, 175, 36, 6973);
+    			attr_dev(label1, "for", "");
+    			attr_dev(label1, "class", "w-100");
+    			add_location(label1, file, 185, 44, 7889);
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "class", "form-control");
+    			attr_dev(input2, "placeholder", "key");
+    			attr_dev(input2, "aria-label", "key");
+    			add_location(input2, file, 186, 44, 7986);
+    			attr_dev(span1, "class", "input-group-text");
+    			add_location(span1, file, 187, 44, 8132);
+    			attr_dev(input3, "type", "number");
+    			attr_dev(input3, "class", "form-control");
+    			attr_dev(input3, "placeholder", "value");
+    			attr_dev(input3, "aria-label", "value");
+    			add_location(input3, file, 188, 44, 8216);
+    			add_location(button3, file, 189, 44, 8419);
+    			attr_dev(div5, "class", "input-group mb-3");
+    			add_location(div5, file, 184, 40, 7814);
+    			attr_dev(div6, "class", "accordion-body");
+    			add_location(div6, file, 174, 32, 6908);
+    			attr_dev(div7, "id", "panelsStayOpen-collapseTwo");
+    			attr_dev(div7, "class", div7_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[4].data ? 'show' : ''));
+    			attr_dev(div7, "aria-labelledby", "panelsStayOpen-headingTwo");
+    			add_location(div7, file, 173, 28, 6724);
+    			attr_dev(div8, "class", "accordion-item height-500 svelte-1f1yzvn");
+    			add_location(div8, file, 167, 24, 6136);
+    			attr_dev(div9, "class", "accordion");
+    			attr_dev(div9, "id", "accordionPanelsStayOpenExample");
+    			add_location(div9, file, 147, 20, 4373);
+    			attr_dev(div10, "class", "border border-dark m-1 p-3");
+    			add_location(div10, file, 140, 16, 4071);
+    			attr_dev(div11, "class", "col-4");
+    			add_location(div11, file, 139, 12, 4035);
+    			attr_dev(div12, "class", "row");
+    			add_location(div12, file, 134, 8, 3798);
     			attr_dev(div13, "class", "container");
-    			add_location(div13, file, 102, 4, 2780);
-    			attr_dev(main, "class", "svelte-n69emr");
-    			add_location(main, file, 99, 0, 2714);
+    			add_location(div13, file, 133, 4, 3766);
+    			attr_dev(main, "class", "svelte-1f1yzvn");
+    			add_location(main, file, 130, 0, 3700);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13652,69 +13693,113 @@ var app = (function () {
     			append_dev(main, h3);
     			append_dev(main, t1);
     			append_dev(main, div13);
-    			append_dev(div13, div11);
-    			append_dev(div11, div0);
-    			append_dev(div0, canvas);
-    			append_dev(div11, t2);
+    			append_dev(div13, div12);
+    			append_dev(div12, div0);
+    			append_dev(div0, canvas_1);
+    			append_dev(div12, t2);
+    			append_dev(div12, div11);
     			append_dev(div11, div10);
+    			append_dev(div10, button0);
+    			append_dev(div10, t4);
     			append_dev(div10, div9);
-    			append_dev(div9, div8);
-    			append_dev(div8, div4);
+    			append_dev(div9, div4);
     			append_dev(div4, h20);
-    			append_dev(h20, button0);
-    			append_dev(button0, t3);
-    			append_dev(div4, t4);
+    			append_dev(h20, button1);
+    			append_dev(button1, t5);
+    			append_dev(div4, t6);
     			append_dev(div4, div3);
     			append_dev(div3, div2);
     			append_dev(div2, div1);
-    			append_dev(div1, span);
-    			append_dev(div1, t6);
+    			append_dev(div1, span0);
+    			append_dev(div1, t8);
     			append_dev(div1, input0);
-    			set_input_value(input0, /*chartInfo*/ ctx[4].label);
-    			append_dev(div2, t7);
-    			append_dev(div2, label);
-    			append_dev(label, t8);
-    			append_dev(label, t9);
-    			append_dev(label, t10);
-    			append_dev(div2, t11);
+    			set_input_value(input0, /*chartInfo*/ ctx[5].label);
+    			append_dev(div2, t9);
+    			append_dev(div2, label0);
+    			append_dev(label0, t10);
+    			append_dev(label0, t11);
+    			append_dev(label0, t12);
+    			append_dev(div2, t13);
     			append_dev(div2, p);
     			append_dev(p, input1);
-    			set_input_value(input1, /*maxWidth*/ ctx[2]);
-    			append_dev(div8, t12);
+    			set_input_value(input1, /*maxWidth*/ ctx[3]);
+    			append_dev(div9, t14);
+    			append_dev(div9, div8);
+    			append_dev(div8, h21);
+    			append_dev(h21, button2);
+    			append_dev(button2, t15);
+    			append_dev(div8, t16);
     			append_dev(div8, div7);
-    			append_dev(div7, h21);
-    			append_dev(h21, button1);
-    			append_dev(button1, t13);
-    			append_dev(div7, t14);
     			append_dev(div7, div6);
-    			append_dev(div6, div5);
-    			append_dev(div5, ul);
+    			append_dev(div6, ul);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(ul, null);
     			}
 
-    			append_dev(div13, t15);
-    			append_dev(div13, div12);
-    			append_dev(div12, button2);
+    			append_dev(div6, t17);
+    			append_dev(div6, div5);
+    			append_dev(div5, label1);
+    			append_dev(div5, t19);
+    			append_dev(div5, input2);
+    			set_input_value(input2, /*newValue*/ ctx[2].key);
+    			append_dev(div5, t20);
+    			append_dev(div5, span1);
+    			append_dev(div5, t22);
+    			append_dev(div5, input3);
+    			set_input_value(input3, /*newValue*/ ctx[2].value);
+    			append_dev(div5, t23);
+    			append_dev(div5, button3);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[5], false, false, false),
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[6]),
     					listen_dev(
-    						input0,
-    						"input",
+    						button0,
+    						"click",
     						function () {
-    							if (is_function(updateChartTitle(/*myChart*/ ctx[1], /*chartInfo*/ ctx[4].label))) updateChartTitle(/*myChart*/ ctx[1], /*chartInfo*/ ctx[4].label).apply(this, arguments);
+    							if (is_function(printChart(/*myChart*/ ctx[1]))) printChart(/*myChart*/ ctx[1]).apply(this, arguments);
     						},
     						false,
     						false,
     						false
     					),
-    					listen_dev(input1, "change", /*input1_change_input_handler*/ ctx[7]),
-    					listen_dev(input1, "input", /*input1_change_input_handler*/ ctx[7]),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[8], false, false, false)
+    					listen_dev(button1, "click", /*click_handler*/ ctx[7], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[8]),
+    					listen_dev(
+    						input0,
+    						"input",
+    						function () {
+    							if (is_function(updateChartTitle(/*myChart*/ ctx[1], /*chartInfo*/ ctx[5].label))) updateChartTitle(/*myChart*/ ctx[1], /*chartInfo*/ ctx[5].label).apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					),
+    					listen_dev(input1, "change", /*input1_change_input_handler*/ ctx[9]),
+    					listen_dev(input1, "input", /*input1_change_input_handler*/ ctx[9]),
+    					listen_dev(button2, "click", /*click_handler_1*/ ctx[10], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[13]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[14]),
+    					listen_dev(
+    						input3,
+    						"input",
+    						function () {
+    							if (is_function(updateChartValues(/*myChart*/ ctx[1], /*graphData*/ ctx[0]))) updateChartValues(/*myChart*/ ctx[1], /*graphData*/ ctx[0]).apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					),
+    					listen_dev(
+    						button3,
+    						"click",
+    						function () {
+    							if (is_function(/*addRecord*/ ctx[6](/*newValue*/ ctx[2], /*graphData*/ ctx[0], /*myChart*/ ctx[1]))) /*addRecord*/ ctx[6](/*newValue*/ ctx[2], /*graphData*/ ctx[0], /*myChart*/ ctx[1]).apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					)
     				];
 
     				mounted = true;
@@ -13723,34 +13808,34 @@ var app = (function () {
     		p: function update(new_ctx, [dirty]) {
     			ctx = new_ctx;
 
-    			if (dirty & /*maxWidth*/ 4) {
-    				set_style(canvas, "width", /*maxWidth*/ ctx[2] + 'px');
+    			if (dirty & /*maxWidth*/ 8) {
+    				set_style(canvas_1, "width", /*maxWidth*/ ctx[3] + 'px');
     			}
 
-    			if (dirty & /*maxWidth*/ 4) {
-    				set_style(canvas, "height", /*maxWidth*/ ctx[2] + 'px');
+    			if (dirty & /*maxWidth*/ 8) {
+    				set_style(canvas_1, "height", /*maxWidth*/ ctx[3] + 'px');
     			}
 
-    			if (dirty & /*editDetails*/ 8 && button0_class_value !== (button0_class_value = "accordion-button " + (/*editDetails*/ ctx[3].info ? '' : 'collapsed'))) {
-    				attr_dev(button0, "class", button0_class_value);
+    			if (dirty & /*editDetails*/ 16 && button1_class_value !== (button1_class_value = "accordion-button " + (/*editDetails*/ ctx[4].info ? '' : 'collapsed'))) {
+    				attr_dev(button1, "class", button1_class_value);
     			}
 
-    			if (dirty & /*chartInfo*/ 16 && input0.value !== /*chartInfo*/ ctx[4].label) {
-    				set_input_value(input0, /*chartInfo*/ ctx[4].label);
+    			if (dirty & /*chartInfo*/ 32 && input0.value !== /*chartInfo*/ ctx[5].label) {
+    				set_input_value(input0, /*chartInfo*/ ctx[5].label);
     			}
 
-    			if (dirty & /*maxWidth*/ 4) set_data_dev(t9, /*maxWidth*/ ctx[2]);
+    			if (dirty & /*maxWidth*/ 8) set_data_dev(t11, /*maxWidth*/ ctx[3]);
 
-    			if (dirty & /*maxWidth*/ 4) {
-    				set_input_value(input1, /*maxWidth*/ ctx[2]);
+    			if (dirty & /*maxWidth*/ 8) {
+    				set_input_value(input1, /*maxWidth*/ ctx[3]);
     			}
 
-    			if (dirty & /*editDetails*/ 8 && div3_class_value !== (div3_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[3].info ? 'show' : ''))) {
+    			if (dirty & /*editDetails*/ 16 && div3_class_value !== (div3_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[4].info ? 'show' : ''))) {
     				attr_dev(div3, "class", div3_class_value);
     			}
 
-    			if (dirty & /*editDetails*/ 8 && button1_class_value !== (button1_class_value = "accordion-button " + (/*editDetails*/ ctx[3].data ? '' : 'collapsed'))) {
-    				attr_dev(button1, "class", button1_class_value);
+    			if (dirty & /*editDetails*/ 16 && button2_class_value !== (button2_class_value = "accordion-button " + (/*editDetails*/ ctx[4].data ? '' : 'collapsed'))) {
+    				attr_dev(button2, "class", button2_class_value);
     			}
 
     			if (dirty & /*graphData, updateChartValues, myChart*/ 3) {
@@ -13777,8 +13862,16 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (dirty & /*editDetails*/ 8 && div6_class_value !== (div6_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[3].data ? 'show' : ''))) {
-    				attr_dev(div6, "class", div6_class_value);
+    			if (dirty & /*newValue*/ 4 && input2.value !== /*newValue*/ ctx[2].key) {
+    				set_input_value(input2, /*newValue*/ ctx[2].key);
+    			}
+
+    			if (dirty & /*newValue*/ 4 && to_number(input3.value) !== /*newValue*/ ctx[2].value) {
+    				set_input_value(input3, /*newValue*/ ctx[2].value);
+    			}
+
+    			if (dirty & /*editDetails*/ 16 && div7_class_value !== (div7_class_value = "accordion-collapse collapse " + (/*editDetails*/ ctx[4].data ? 'show' : ''))) {
+    				attr_dev(div7, "class", div7_class_value);
     			}
     		},
     		i: noop$1,
@@ -13816,12 +13909,21 @@ var app = (function () {
     	chart.update();
     }
 
+    function printChart(chartObject) {
+    	let a = document.createElement('a');
+    	a.href = document.getElementById('myChart').toDataURL('image/png', 1.0);
+    	a.download = 'chart.jpg';
+    	a.click();
+    }
+
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('AppChart', slots, []);
     	let graphData = [];
+    	let canvas;
     	let ctx;
     	let myChart;
+    	let newValue = { key: '', value: '' };
     	const currUrl = window.location.search;
     	const urlParams = new URLSearchParams(currUrl);
     	let entries = urlParams.entries();
@@ -13839,9 +13941,24 @@ var app = (function () {
     		graphData.push({ key, value });
     	}
 
-    	function drawChart(info) {
-    		ctx = document.getElementById("myChart").getContext('2d');
+    	function addRecord(value, data, chart) {
+    		$$invalidate(0, graphData = [...data, { key: value.key, value: value.value }]);
+    		chart.data.labels.push(value.key);
+    		chart.data.datasets[0].data.push(value.value);
+    		$$invalidate(2, newValue.key = '', newValue);
+    		$$invalidate(2, newValue.value = '', newValue);
+    		chart.update();
+    	}
 
+    	function drawChart(info) {
+    		canvas = document.getElementById("myChart");
+    		ctx = canvas.getContext('2d');
+    		canvas.style.backgroundColor = "white";
+
+    		//ctx.save();
+    		//ctx.fillStyle = 'blue';
+    		//ctx.fillRect(0, 0, canvas.width , canvas.height); 
+    		// ctx.restore()
     		let myChart = new Chart(ctx,
     		{
     				type: 'radar',
@@ -13852,7 +13969,7 @@ var app = (function () {
     							data: graphData.map(record => record.value), // the previous one was values
     							label: info.label,
     							borderColor: info.borderColor,
-    							backgroundColor: "rgb(62,149,205,0.1)",
+    							backgroundColor: "rgb(62,149,205, 0.1)",
     							borderWidth: 2
     						}
     					]
@@ -13861,15 +13978,13 @@ var app = (function () {
     					responsive: true, // Instruct chart js to respond nicely.
     					maintainAspectRatio: false, // Add
     					scale: { min: 0, max: 8, stepSize: 2 },
-    					scales: {}, /* r: {
-        grid: {
-            color: 'gray'
-        },
-        angleLines: {
-            color:''
-        }
-    }  */
-    					
+    					legend: { position: 'left' },
+    					scales: {
+    						r: {
+    							grid: { color: 'lightgray', circular: true },
+    							angleLines: { color: 'lightgray' }
+    						}
+    					}
     				}
     			});
 
@@ -13879,7 +13994,8 @@ var app = (function () {
     	onMount(() => {
     		console.log("the component has mounted");
     		$$invalidate(1, myChart = drawChart(chartInfo));
-    	});
+    	}); // http://192.168.1.13:8001/?A1=6&A2=5&A3=1&A4=4&B1=4&B2=3&B3=6&B4=3&C1=2&C2=1&C3=7&C4=9&D1=0&D2=2&D3=6&D4=3&
+    	// http://localhost:5000/?A1=6&A2=5&A3=1&A4=4&B1=4&B2=3&B3=6&B4=3&C1=2&C2=1&C3=7&C4=8&D1=0&D2=2&D3=6&D4=3&
 
     	const writable_props = [];
 
@@ -13887,19 +14003,19 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<AppChart> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = () => $$invalidate(3, editDetails.info = !editDetails.info, editDetails);
+    	const click_handler = () => $$invalidate(4, editDetails.info = !editDetails.info, editDetails);
 
     	function input0_input_handler() {
     		chartInfo.label = this.value;
-    		$$invalidate(4, chartInfo);
+    		$$invalidate(5, chartInfo);
     	}
 
     	function input1_change_input_handler() {
     		maxWidth = to_number(this.value);
-    		$$invalidate(2, maxWidth);
+    		$$invalidate(3, maxWidth);
     	}
 
-    	const click_handler_1 = () => $$invalidate(3, editDetails.data = !editDetails.data, editDetails);
+    	const click_handler_1 = () => $$invalidate(4, editDetails.data = !editDetails.data, editDetails);
 
     	function input0_input_handler_1(each_value, record_index) {
     		each_value[record_index].key = this.value;
@@ -13907,8 +14023,18 @@ var app = (function () {
     	}
 
     	function input1_input_handler(each_value, record_index) {
-    		each_value[record_index].value = this.value;
+    		each_value[record_index].value = to_number(this.value);
     		$$invalidate(0, graphData);
+    	}
+
+    	function input2_input_handler() {
+    		newValue.key = this.value;
+    		$$invalidate(2, newValue);
+    	}
+
+    	function input3_input_handler() {
+    		newValue.value = to_number(this.value);
+    		$$invalidate(2, newValue);
     	}
 
     	$$self.$capture_state = () => ({
@@ -13916,8 +14042,10 @@ var app = (function () {
     		element,
     		Chart,
     		graphData,
+    		canvas,
     		ctx,
     		myChart,
+    		newValue,
     		currUrl,
     		urlParams,
     		entries,
@@ -13926,17 +14054,21 @@ var app = (function () {
     		chartInfo,
     		updateChartTitle,
     		updateChartValues,
-    		drawChart
+    		addRecord,
+    		drawChart,
+    		printChart
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('graphData' in $$props) $$invalidate(0, graphData = $$props.graphData);
+    		if ('canvas' in $$props) canvas = $$props.canvas;
     		if ('ctx' in $$props) ctx = $$props.ctx;
     		if ('myChart' in $$props) $$invalidate(1, myChart = $$props.myChart);
+    		if ('newValue' in $$props) $$invalidate(2, newValue = $$props.newValue);
     		if ('entries' in $$props) entries = $$props.entries;
-    		if ('maxWidth' in $$props) $$invalidate(2, maxWidth = $$props.maxWidth);
-    		if ('editDetails' in $$props) $$invalidate(3, editDetails = $$props.editDetails);
-    		if ('chartInfo' in $$props) $$invalidate(4, chartInfo = $$props.chartInfo);
+    		if ('maxWidth' in $$props) $$invalidate(3, maxWidth = $$props.maxWidth);
+    		if ('editDetails' in $$props) $$invalidate(4, editDetails = $$props.editDetails);
+    		if ('chartInfo' in $$props) $$invalidate(5, chartInfo = $$props.chartInfo);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -13946,15 +14078,19 @@ var app = (function () {
     	return [
     		graphData,
     		myChart,
+    		newValue,
     		maxWidth,
     		editDetails,
     		chartInfo,
+    		addRecord,
     		click_handler,
     		input0_input_handler,
     		input1_change_input_handler,
     		click_handler_1,
     		input0_input_handler_1,
-    		input1_input_handler
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler
     	];
     }
 
