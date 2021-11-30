@@ -88,8 +88,10 @@ import Chart from 'chart.js/auto';
                     max: 8,
                     stepSize: 2,
                 },
-                legend: {
-                    position: 'left'
+                plugins: {
+                    legend: {
+                        display: false, 
+                    }
                 },
                 scales: {
                     r: {
@@ -119,12 +121,12 @@ import Chart from 'chart.js/auto';
 
     }); 
 
-    function printChart(chartObject) {
+    /* function printChart(chartObject) {
         let a = document.createElement('a');
         a.href = document.getElementById('myChart').toDataURL('image/png', 1.0);
         a.download = 'chart.jpg';
         a.click();
-    }
+    } */
 
 </script>
 
@@ -139,12 +141,13 @@ import Chart from 'chart.js/auto';
 
             <div class="col-4">
                 <div class="border border-dark m-1 p-3">
-                    <button id="download"
+                    <!-- <button id="download"
                         class="btn btn-primary mb-3 "
                         on:click="{printChart(myChart)}"
                         >
                         Print graph
-                </button>
+                    </button> -->
+                
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne"> 
