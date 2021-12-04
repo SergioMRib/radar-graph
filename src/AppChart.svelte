@@ -135,7 +135,7 @@ import Chart from 'chart.js/auto';
 	
     <div class="container">
         <div class="row">
-            <div id="myDiv" class="col-7 border border-dark my-1 p-3">
+            <div id="myDiv" class="col-lg-7 border border-dark my-1 p-3">
                 <canvas id="myChart" style="width:100%;width:{maxWidth + 'px'};height:{maxWidth + 'px'};"></canvas>
             </div>
 
@@ -157,10 +157,10 @@ import Chart from 'chart.js/auto';
                             </h2>
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse {editDetails.info ? 'show': ''}" aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
-                                    <div class="input-group mb-3">
+                                    <!-- <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">Title</span>
                                         <input type="text" class="form-control" placeholder="Title" aria-label="label" aria-describedby="label" bind:value={chartInfo.label} on:input="{updateChartTitle(myChart, chartInfo.label)}">
-                                    </div>
+                                    </div> -->
                                     <label for="max-width">Current size: {maxWidth}px</label>
                                     <p>
                                         <input type="range" name="max-width" id="max-width" min="350" max="800" step="50" bind:value={maxWidth}>
